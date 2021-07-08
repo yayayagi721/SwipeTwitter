@@ -11,13 +11,13 @@ import android.view.ViewGroup
  * Use the [TestFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TestFragment : Fragment() {
+class TweetContentFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false)
+        return inflater.inflate(R.layout.fragment_tweet_content, container, false)
     }
 
 }
