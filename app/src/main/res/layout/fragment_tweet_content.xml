@@ -7,70 +7,160 @@
     android:background="#bdc"
     android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/purple_700"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="15dp"
-        >
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp">
+
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_icon"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:adjustViewBounds="true"
             android:src="@drawable/risu"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:shapeAppearanceOverlay="@style/circleImageView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_vertical"
-            android:orientation="vertical">
+            android:textColor="@color/black"
+            android:text="@string/sample_name"
+            app:layout_constraintBottom_toTopOf="@+id/user_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            />
 
-            <TextView
-                android:id="@+id/sample0_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:background="@color/teal_200"
-                android:text="@string/sample_id" />
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/sample_id"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_icon"
+            app:layout_constraintTop_toBottomOf="@+id/user_name"
+            tools:text="text" />
 
-            <TextView
-                android:id="@+id/sample0_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:textColor="@color/white"
-                android:background="@color/purple_200"
-                android:text="@string/sample_id" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:layout_margin ="15dp"
+        >
+
+        <TextView
+            android:id="@+id/tweet_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/test_tweet_text_lengh140"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:layout_margin ="15dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_1"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_image_1"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_2"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_2"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_image_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/image_1"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="#bdc"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:background="#bdc"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+
+
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="#bdc"
-        android:orientation="horizontal"
-        android:layout_weight="2"
-        android:gravity="center">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:background="#bdc"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
 
-    </LinearLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/test_image_3"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin ="5dp"
+                app:shapeAppearanceOverlay="@style/roundedCornersImageView" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="#bdc"
-        android:orientation="horizontal"
-        android:layout_weight="2"
-        android:gravity="center">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/test_image_5"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin ="5dp"
+                app:shapeAppearanceOverlay="@style/roundedCornersImageView" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
